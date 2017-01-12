@@ -1,0 +1,52 @@
+
+<div class="container-fluid container-fluid-main">
+  <div class="row">
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-brand">Создание/редактирование пользователей:</div>
+
+        <div class="navbar-form navbar-right">
+          <%= link_to new_user_path, :class => 'btn btn-warning' do %>
+              <span class="glyphicon glyphicon-plus"></span> Создать пользователя
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+
+    <table class="table table-responsive table-striped">
+      <thead class="thead-inverse">
+      <tr>
+        <th class="text-center vertical-align">Логин</th>
+        <th class="text-center vertical-align">Дата создания</th>
+        <th class="text-center vertical-align">Дата обновления</th>
+        <th class="text-center vertical-align">Администратор</th>
+
+
+        <th colspan="3"></th>
+      </tr>
+      <tbody>
+      <% @users.each do |user| %>
+          <tr>
+            <td class = "vertical-align"> <%= user.username %></td>
+
+
+            <td class = "vertical-align text-center"> <%= user.created_at %></td>
+            <td class = "vertical-align text-center"> <%= user.updated_at %></td>
+             <td class = "vertical-align text-center"> <%= user.is_admin %></td>
+
+
+
+
+
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<table class="table table-responsive table-striped">
+  <tr>
+    <th>date</th>
+    <th>user</th>
+    <th>user description</th>
+    <th>params</th>
+    <th>browser</th>
+    <th>ip_address</th>
+
+  </tr>
+  <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.created_at %></td>
+        <td><%= log.user.username %></td>
+        <td><%= log.user.description %></td>
+        <td><%= log.params %></td>
+        <td><%= log.browser %></td>
+        <td><%= log.ip_address %></td>
+
+      </tr>
+
+
+  <% end %>
+  <%= will_paginate @logs %>
+
+
+
+
+
+

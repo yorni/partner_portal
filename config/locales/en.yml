@@ -1,0 +1,111 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  activerecord:
+    models:
+        manufacturer: "Производитель"
+        category: "Категория"
+        product: "Товар"
+    attributes:
+        manufacturer:
+          name: "Название"
+        category:
+          name: "Название"
+        product:
+          part_number: "Part-number"
+          name: "Название"
+          description: "Описание"
+          price: "Цена"
+          stock: "Остаток"
+
+
+  ransack:
+    search: "search"
+    predicate: "predicate"
+    and: "and"
+    or: "or"
+    any: "any"
+    all: "all"
+    combinator: "combinator"
+    attribute: "attribute"
+    value: "value"
+    condition: "condition"
+    sort: "sort"
+    asc: "по возростанию"
+    desc: "по убыванию"
+    predicates:
+      eq: "равно"
+      eq_any: "equals any"
+      eq_all: "equals all"
+      not_eq: "не равно"
+      not_eq_any: "not equal to any"
+      not_eq_all: "not equal to all"
+      matches: "matches"
+      matches_any: "matches any"
+      matches_all: "matches all"
+      does_not_match: "doesn't match"
+      does_not_match_any: "doesn't match any"
+      does_not_match_all: "doesn't match all"
+      lt: "больше"
+      lt_any: "less than any"
+      lt_all: "less than all"
+      lteq: "less than or equal to"
+      lteq_any: "less than or equal to any"
+      lteq_all: "less than or equal to all"
+      gt: "меньше"
+      gt_any: "greater than any"
+      gt_all: "greater than all"
+      gteq: "greater than or equal to"
+      gteq_any: "greater than or equal to any"
+      gteq_all: "greater than or equal to all"
+      in: "in"
+      in_any: "in any"
+      in_all: "in all"
+      not_in: "not in"
+      not_in_any: "not in any"
+      not_in_all: "not in all"
+      cont: "содержит"
+      cont_any: "contains any"
+      cont_all: "contains all"
+      not_cont: "doesn't contain"
+      not_cont_any: "doesn't contain any"
+      not_cont_all: "doesn't contain all"
+      start: "starts with"
+      start_any: "starts with any"
+      start_all: "starts with all"
+      not_start: "doesn't start with"
+      not_start_any: "doesn't start with any"
+      not_start_all: "doesn't start with all"
+      end: "ends with"
+      end_any: "ends with any"
+      end_all: "ends with all"
+      not_end: "doesn't end with"
+      not_end_any: "doesn't end with any"
+      not_end_all: "doesn't end with all"
+      'true': "is true"
+      'false': "is false"
+      present: "is present"
+      blank: "is blank"
+      'null': "is null"
+      not_null: "is not null"

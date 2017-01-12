@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= search_form_for @search, :html => { :class => "form-inline" },  url: search_products_path, method: :post do |f| %>
+
+
+
+    <div class="form-group">
+      <%= f.label :manufacturer_id_eq, "Производитель:",{  :for => 'manufacturer_id_eq' } %>
+      <%= f.select :manufacturer_id_eq, options_from_collection_for_select(Manufacturer.all, "id", "name", @search.manufacturer_id_eq), { :include_blank => true },
+                   { :class => 'form-control', :id => 'manufacturer_id_eq' } %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :category_id_eq, "Категория:", {  :for => 'category_id_eq' } %>
+      <%= f.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "name", @search.category_id_eq), { :include_blank => true },
+                   { :class => 'form-control', :id => 'category_id_eq' } %>
+    </div>
+
+      <div class="form-group">
+      <%= f.label :part_number_cont, "Part-number:" ,{  :for => 'part_number_cont' }%>
+      <%= f.search_field :part_number_cont, { :class => 'form-control', :id => 'part_number_cont' } %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description_cont, "Описание:" ,{  :for => 'description_cont' }%>
+      <%= f.search_field :description_cont , { :class => 'form-control', :id => 'description_cont' } %>
+    </div>
+
+
+
+
+    <div class="actions btn btn-lg"><%= f.submit "Отбор" %></div>
+    <%= link_to "Очистить отбор", request.path, class:"btn btn-lg" %>
+<% end %>
+
+
+<table id="products" class="table table-responsive table-striped">
+  <tr>
+    <th>Производитель</th>
+    <th>Part number</th>
+
+    <th>Описание</th>
+
+    <th>Цена</th>
+    <th>Остаток</th>
+
+    <th>Категория</th>
+  </tr>
+  <% @products.each do |product| %>
+      <tr>
+        <td><%= product.manufacturer.name %></td>
+        <td><%= product.part_number %></td>
+
+        <td><%= product.description %></td>
+
+        <td><%= number_to_currency(product.price) %></td>
+        <td><%= if product.stock <= 10
+                  product.stock
+                else "10+"
+                end %></td>
+
+        <td><%= product.category.name %></td>
+      </tr>
+
+
+  <% end %>
+
+
+
+
+
+
+
