@@ -1,3 +1,6 @@
 == README
 
-Partner portal for checking prices and stocks
+Partner portal
+
+For checking prices and stocks
+
