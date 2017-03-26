@@ -24,9 +24,11 @@ end
     
         
 def product_update
+
   product = Product.find_by code: params["code"]
   manufacturer = Manufacturer.find_by code: params["manufacturer_code"]
   category = Category.find_by code: params["category_code"]
+  country = Country.find_by code: params["country_code"]
       unless product
           product = Product.new
       end
@@ -37,6 +39,7 @@ def product_update
   product.manufacturer_id = manufacturer.id
   product.category_id = category.id
   product.part_number = params["part_number"]
+  product.country_id = country.id
   product.save
   render json: { result: true }
 end

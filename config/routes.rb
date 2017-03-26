@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :countries
   resources :products do
     collection {post :search, to: 'products#index' }
   end
